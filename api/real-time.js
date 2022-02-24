@@ -1,7 +1,7 @@
 "use strict";
 
-import { httpRequest } from "./http.js";
-import { API_KEY } from "./api-key.js";
+import { httpRequest } from "../util/http.js";
+import { API_KEY } from "../api-key.js";
 
 export async function getBusArrival(busStopCode, serviceNo) {
     let path = `/ltaodataservice/BusArrivalv2?BusStopCode=${busStopCode}`;

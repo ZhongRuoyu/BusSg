@@ -1,7 +1,7 @@
 "use strict";
 
-import { getBusServices, getBusRoutes, getBusStops } from "./ad-hoc.js";
-export { getBusArrival } from "./real-time.js";
+import { getBusServices, getBusRoutes, getBusStops } from "./api/ad-hoc.js";
+export { getBusArrival } from "./api/real-time.js";
 
 const LOADERS = {
     "BusServices": getBusServices,

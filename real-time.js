@@ -8,11 +8,12 @@ export async function getBusArrival(busStopCode, serviceNo) {
     if (serviceNo !== undefined) {
         path += `&ServiceNo=${serviceNo}`;
     }
-    return httpRequest({
+    const data = await httpRequest({
         hostname: "datamall2.mytransport.sg",
         path: path,
         headers: {
             "AccountKey": API_KEY,
         }
-    }).then(data => JSON.parse(data).Services);
+    });
+    return JSON.parse(data).Services;
 }

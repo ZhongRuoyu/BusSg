@@ -1,0 +1,5 @@
+{
+    "name": "bus-sg",
+    "description": "An API for querying Singapore's bus services.",
+    "type": "module"
+}

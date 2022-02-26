@@ -34,7 +34,7 @@ export function getBusServicesByDescription(description) {
 
 export function getBusServiceByServiceNo(serviceNo) {
     return load("BusServices").then(data => {
-        return data.filter(service => strEqualIgnoreCase(service.ServiceNo, serviceNo))[0] || null;
+        return data.filter(service => strEqualIgnoreCase(service.ServiceNo, serviceNo));
     });
 }
 
@@ -46,7 +46,8 @@ export function getBusRouteByServiceNo(serviceNo) {
 
 export function getBusStopsByDescription(description) {
     return load("BusStops").then(data => data.filter(stop => {
-        return strContainsIgnoreCase(stop.RoadName, description) ||
+        return strContainsIgnoreCase(stop.BusStopCode, description) ||
+            strContainsIgnoreCase(stop.RoadName, description) ||
             strContainsIgnoreCase(stop.Description, description);
     }));
 }
